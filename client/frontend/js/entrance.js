@@ -1,73 +1,58 @@
 window.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.entrance_form');
-  const formElements = form.elements;
-  const formData = new FormData();
+  const button = document.querySelector('.submitButton');
 
-  form.addEventListener('submit', (e) => {
+  const mapErrorToUi = (errorMessages) => {
+    errorMessages.forEach((error) => {
+      const errorElementContainer = document.querySelector(
+        `.error-${error.property}`,
+      );
+      Object.values(error.constraints).forEach((errorMessage) => {
+        errorElementContainer.insertAdjacentHTML(
+          'beforeend',
+          `
+          <p class="error-message">* ${errorMessage}</p>
+          `,
+        );
+      });
+    });
+  };
+
+  const clearAllError = () => {
+    const errorNodes = document.querySelectorAll('.error-message');
+    errorNodes.forEach((node) => {
+      const parentNode = node.parentNode;
+      parentNode.removeChild(node);
+    });
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formData.set('gender', formElements.gender.value);
-    submitForm();
-  });
+    clearAllError();
+    const formDatas = new FormData(form);
 
-  const submitForm = async () => {
+    button.disabled = true;
+    button.textContent = 'uploading ...';
+
     try {
-      const result = await axios.post('/admission', formData);
-      console.log(result);
+      await axios.post('/admission', formDatas, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      alert('form uploaded successfully ...');
+      window.location.href = '/';
     } catch (err) {
-      console.log(err.message);
+      button.disabled = false;
+      button.textContent = 'submit';
+
+      if (err.response) {
+        if (err.response.data.error === 'Unauthorized') {
+        }
+        mapErrorToUi(err.response.data.message);
+      } else {
+        alert('something went wrong please try again !');
+      }
     }
-  };
-
-  const fileChangeHandle = (inputFieldName) => {
-    return (e) => {
-      formData.set(inputFieldName, e.target.files[0]);
-    };
-  };
-
-  const inputChangeHandle = (inputFieldName) => {
-    return (e) => {
-      formData.set(inputFieldName, e.target.value);
-    };
-  };
-
-  //inputs
-  formElements.studentName.addEventListener(
-    'change',
-    inputChangeHandle('studentName'),
-  );
-  formElements.studentPhone.addEventListener(
-    'change',
-    inputChangeHandle('studentPhone'),
-  );
-  formElements.studentAddress.addEventListener(
-    'change',
-    inputChangeHandle('studentAddress'),
-  );
-  formElements.studentEmail.addEventListener(
-    'change',
-    inputChangeHandle('studentEmail'),
-  );
-  formElements.program.addEventListener('change', inputChangeHandle('program'));
-  formElements.parentName.addEventListener(
-    'change',
-    inputChangeHandle('parentName'),
-  );
-  formElements.parentPhone.addEventListener(
-    'change',
-    inputChangeHandle('parentPhone'),
-  );
-
-  //files
-  formElements.profilePicName.addEventListener(
-    'change',
-    fileChangeHandle('profilePicName'),
-  );
-  formElements.marksheet11Name.addEventListener(
-    'change',
-    fileChangeHandle('marksheet11Name'),
-  );
-  formElements.marksheet12Name.addEventListener(
-    'change',
-    fileChangeHandle('marksheet12Name'),
-  );
+  });
 });

@@ -17,10 +17,16 @@ enum GenderType{
 }
 
 enum Programs{
-  bsccsit
-  bbs
-  bbm 
-  bit
+  ME_Computer
+  BE_Software
+  BE_Civil
+  BE_Computer
+  BE_IT
+  BE_Electronics_and_Communication
+  MCIS
+  BCA
+  BBA
+  MSc_Computer
 }
 
 model AdmittingStudent{

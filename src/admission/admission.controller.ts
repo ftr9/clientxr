@@ -43,9 +43,9 @@ export class AdmissionController {
     ),
   )
   admitStudents(
+    @Body() body: AdmissionFormDto,
     @UploadedFiles()
     files: filesType,
-    @Body() body: AdmissionFormDto,
   ) {
     return this.admissionService.admitStudents({
       studentName: body.studentName,
