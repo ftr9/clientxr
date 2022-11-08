@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch (err) {
       button.disabled = false;
       button.textContent = 'submit';
-
+      console.log(err);
       if (err.response) {
         if (err.response.data.error === 'Unauthorized') {
         }
