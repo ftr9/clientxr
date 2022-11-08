@@ -35,11 +35,15 @@ window.addEventListener('DOMContentLoaded', () => {
     button.textContent = 'uploading ...';
 
     try {
-      await axios.post('/admission', formDatas, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
+      await axios.post(
+        'https://ncit-college.herokuapp.com/admission',
+        formDatas,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
         },
-      });
+      );
       alert('form uploaded successfully ...');
       window.location.href = '/';
     } catch (err) {
