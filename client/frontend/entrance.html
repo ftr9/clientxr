@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css"
+    />
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- End Bootstrap CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Admission form</title>
+  </head>
+
+  <body>
+    <header>
+      <!--Navbar Start-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="./img/logo.png"
+              alt="college logo"
+              width="200"
+              height="45"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="bi bi-list"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact">Location</a>
+              </li>
+            </ul>
+            <!--
+                 <ul class="navbar-nav mb-2 mb-lg-0 action-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="entrance.html">
+                  <button id="btn">
+                    <iconify-icon
+                      icon="ant-design:form-outlined"
+                      style="color: white"
+                      width="20"
+                      height="13"
+                    ></iconify-icon>
+                    Entrace Application
+                  </button>
+                </a>
+              </li>
+            </ul>
+            -->
+          </div>
+        </div>
+      </nav>
+      <!--Navbar End-->
+    </header>
+    <div id="heading">
+      <h2>Entrance Application Form (Academic Year 2022)</h2>
+      <h2>Bachelors Program</h2>
+    </div>
+
+    <div class="form-box">
+      <form method="post" action="/admission" class="entrance_form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name"
+                >Student Name<span class="astrik">*</span></label
+              >
+              <input
+                id="name"
+                name="studentName"
+                type="text"
+                class="form-control"
+                required=""
+                placeholder="Student Full Name"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone"
+                >Student Phone<span class="astrik">*</span></label
+              >
+              <input
+                id="phone"
+                name="studentPhone"
+                type="text"
+                class="form-control"
+                required
+                placeholder="Student Phone"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="address"
+                >Student Address<span class="astrik">*</span></label
+              >
+              <input
+                id="address"
+                name="studentAddress"
+                type="text"
+                class="form-control"
+                required=""
+                placeholder="Student Address"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"
+                >Student Email<span class="astrik">*</span></label
+              >
+              <input
+                id="email"
+                name="studentEmail"
+                type="text"
+                class="form-control"
+                required=""
+                placeholder="Student Email"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="course_id"
+                >Program<span class="astrik">*</span></label
+              >
+              <div class="search-status">
+                <select
+                  id="course_id"
+                  class="form-control single-select select2-hidden-accessible"
+                  required
+                  name="program"
+                  style="width: 100%"
+                  data-select2-id="1"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <option value="" data-select2-id="3">Select Program</option>
+                  <option value="ME-Computer" data-select2-id="8"></option>
+                  <option value="BE-Software" data-select2-id="9">
+                    BE Software
+                  </option>
+                  <option value="BE-Civil" data-select2-id="10">
+                    BE Civil
+                  </option>
+                  <option value="BE-Computer" data-select2-id="11">
+                    BE Computer
+                  </option>
+                  <option value="BE-IT" data-select2-id="12">BE IT</option>
+                  <option
+                    value="BE-Electronics-and-Communication"
+                    data-select2-id="13"
+                  >
+                    BE Electronics and Communication
+                  </option>
+                  <option value="MCIS" data-select2-id="14">MCIS</option>
+                  <option value="BCA" data-select2-id="15">BCA</option>
+                  <option value="BBA" data-select2-id="16">BBA</option>
+                  <option value="MSc Computer" data-select2-id="17">
+                    MSc Computer
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Gender *</label>
+              <div class="row">
+                <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                  <div class="radio-box">
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      required=""
+                      checked
+                    />
+                    <label for="male">Male</label>
+                  </div>
+                </div>
+                <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                  <div class="radio-box">
+                    <input type="radio" name="gender" value="female" />
+                    <label for="female">Female</label>
+                  </div>
+                </div>
+                <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                  <div class="radio-box">
+                    <input type="radio" name="gender" value="other" />
+                    <label for="other">Other</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="guardian_name"
+                >Guardian/Parent Name<span class="astrik">*</span></label
+              >
+              <input
+                id="guardian_name"
+                name="parentName"
+                type="text"
+                class="form-control"
+                required=""
+                placeholder="Guardian Address"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="guardian_phone"
+                >Guardian/Parent Phone<span class="astrik">*</span></label
+              >
+              <input
+                id="guardian_phone"
+                name="parentPhone"
+                type="text"
+                class="form-control"
+                required=""
+                placeholder="Guardian phone"
+                value=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="photo"
+                >PP size photo of student<span class="astrik">*</span></label
+              >
+              <input
+                name="profilePicName"
+                type="file"
+                required=""
+                class="form-control"
+                id="photo"
+                accept="image/*"
+              />
+            </div>
+            <div class="form-group">
+              <label for="marksheet_11"
+                >Marksheet of grade 11<span class="astrik">*</span></label
+              >
+              <input
+                id="marksheet_11"
+                name="marksheet11Name"
+                type="file"
+                accept="image/*"
+                class="form-control"
+                id="marksheet_11"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Marksheet of grade 12</label>
+              <input
+                name="marksheet12Name"
+                type="file"
+                required=""
+                accept="image/*"
+                class="form-control"
+                id="marksheet_12"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button
+            class="btn btn-md btn-success btn-complete float-right"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-primary py-3 text-white">
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="bi me-1"></i>NEPAL COLLEGE OF INFORMATION TECHNOLOGY
+              </h6>
+              <p>
+                We have wide variety of courses in the field of IT, management,
+                engineering and computer science
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">About US</h6>
+              <p>
+                <a href="#!" class="text-reset">Pokhara University</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Executive Director's Message</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Principal's Message</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Resource</h6>
+              <p>
+                <a href="#!" class="text-reset">Courses</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Events</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">News & Notices</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="bi bi-location me-3"></i> Balkumari , Kathmandu</p>
+              <p>
+                <i class="bi bi-envelope me-3"></i>
+                <a href="mailto:info@ncit.edu.np">info@ncit.edu.np</a>
+              </p>
+              <p><i class="bi bi-phone me-3"></i> 5186354, 5186358</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center py-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="#">NCIT COLLEGE</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+      integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./js/entrance.js"></script>
+  </body>
+</html>
