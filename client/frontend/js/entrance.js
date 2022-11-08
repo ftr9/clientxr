@@ -45,9 +45,15 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch (err) {
       button.disabled = false;
       button.textContent = 'submit';
-      console.log(err);
       if (err.response) {
         if (err.response.data.error === 'Unauthorized') {
+          document.querySelector('.error-studentEmail').insertAdjacentHTML(
+            'beforeend',
+            `
+          <p class="error-message">* Email already exists. Try another</p>
+          `,
+          );
+          return;
         }
         mapErrorToUi(err.response.data.message);
       } else {
