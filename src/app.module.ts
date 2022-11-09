@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AdmissionModule } from './admission/admission.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { AdminModule } from './admin/admin.module';
 import * as path from 'node:path';
 
 @Module({
@@ -13,6 +14,7 @@ import * as path from 'node:path';
     }),
     AdmissionModule,
     PrismaModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],

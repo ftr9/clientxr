@@ -20,6 +20,24 @@ export class AdmissionService {
       throw this._handleError(err);
     }
   }
+
+  getAllStudents() {
+    return this.prismaService.admittingStudent.findMany({
+      orderBy: {
+        studentName: 'asc',
+      },
+    });
+  }
+
+  async deleteStudent(id: number) {
+    const deletedStudent = await this.prismaService.admittingStudent.delete({
+      where: {
+        id: id,
+      },
+    });
+    return deletedStudent;
+  }
+
   _handleError(err: Error) {
     if (err instanceof PrismaClientKnownRequestError) {
       if (err.meta.target === 'AdmittingStudent_studentEmail_key') {

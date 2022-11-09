@@ -353,3 +353,126 @@ header nav ul.action-menu .nav-item .nav-link {
     width: 95%;
   }
 }
+
+/*form*/
+#form {
+  height: 86vh;
+  /*background: blue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container button {
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.form_container button:hover {
+  background-color: rgb(145, 21, 65);
+  color: white;
+  border-color: transparent;
+}
+.form_container input {
+  padding: 5px 10px;
+}
+
+.studentsFormCont_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.studentsFormCont_header_image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: orange;
+  overflow: hidden;
+}
+.studentsFormCont_header_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.studentsFormCont {
+  width: 400px;
+  background-color: #f1f3f5;
+  padding: 25px 10px;
+  margin: 10px;
+}
+
+.studentsFormCont_info {
+  background-color: #f8f9fa;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+.studentsFormCont_info_divider {
+  height: 15px;
+  width: 1px;
+  background-color: #d1d1d1;
+  display: block;
+  margin: 0 20px;
+}
+
+.studentsFormCont_parent_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.studentsFormCont_marksheet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.studentsFormCont_marksheet_images {
+  display: flex;
+  align-items: center;
+}
+.studentsFormCont_marksheet_image {
+  height: 150px;
+  background-color: black;
+  flex: 1;
+  overflow: hidden;
+}
+
+.studentsFormCont_marksheet_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.studentsFormCont_marksheet_image:nth-of-type(1) {
+  margin-right: 3px;
+}
+.studentsFormCont_marksheet_image:nth-of-type(2) {
+  margin-left: 3px;
+}
+
+.studentsForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.deleteStudent {
+  border: none;
+  padding: 5px 0;
+  color: white;
+  background-color: #f03e3e;
+  margin-top: 10px;
+  border: 2px solid transparent;
+}
+.deleteStudent:hover {
+  border: 2px solid black;
+}

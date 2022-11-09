@@ -1,5 +1,12 @@
-import { Controller, Post, Get, UseInterceptors } from '@nestjs/common';
-import { Body, UploadedFiles } from '@nestjs/common/decorators';
+import {
+  Controller,
+  Post,
+  Get,
+  UseInterceptors,
+  Delete,
+  ParseIntPipe,
+} from '@nestjs/common';
+import { Body, Param, UploadedFiles } from '@nestjs/common/decorators';
 import { FileFieldsInterceptor } from '@nestjs/platform-express/multer';
 import * as multer from 'multer';
 import * as Path from 'path';
@@ -10,7 +17,7 @@ import { filesType } from './interfaces/uploadFile.interface';
 
 const diskStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads');
+    cb(null, 'client/frontend/img/uploads');
   },
   filename: function (req, file, cb) {
     cb(null, uuid() + Path.extname(file.originalname));
@@ -60,5 +67,15 @@ export class AdmissionController {
       marksheet11Name: files.marksheetgrade11[0].filename,
       marksheet12Name: files.marksheetgrade12[0].filename,
     });
+  }
+
+  @Get('students')
+  getAllStudents() {
+    return this.admissionService.getAllStudents();
+  }
+
+  @Delete('/students/:id')
+  deleteStudent(@Param('id', ParseIntPipe) studentId: number) {
+    return this.admissionService.deleteStudent(studentId);
   }
 }
