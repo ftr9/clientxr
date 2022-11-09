@@ -100,7 +100,6 @@ async function fetchAllStudents() {
           <div class="studentsFormCont_info">marksheet grade 11</div>
           <div class="studentsFormCont_info">marksheet grade 12</div>
         </div>
-        <p class="error-message">* click on the image to see preview</p>
         <div class="studentsFormCont_marksheet_images">
           <div class="studentsFormCont_marksheet_image">
              <img src="./img/uploads/${student.marksheet11Name}"  alt="marksheet grade 11"></img>
