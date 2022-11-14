@@ -17,7 +17,7 @@ import { filesType } from './interfaces/uploadFile.interface';
 
 const diskStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'client/frontend/img/uploads/');
+    cb(null, Path.join(__dirname, '../../client/frontend/img/uploads'));
   },
   filename: function (req, file, cb) {
     cb(null, uuid() + Path.extname(file.originalname));
